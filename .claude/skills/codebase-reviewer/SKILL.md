@@ -83,9 +83,18 @@ Labels to apply: `review`, `security`/`quality`/`deps`/`graph`, `P1`/`P2`/`P3`/`
 Ensure labels exist first:
 ```bash
 for label in review security quality deps graph P1 P2 P3 P4; do
-  gh label create "$label" 2>/dev/null || true
 done
 ```
+
+> **Labels are managed org-wide — do not create them here.**
+> The taxonomy is [`ZySec-AI/.github/labels.yml`](https://github.com/ZySec-AI/.github/blob/develop/labels.yml).
+> Every repo is reconciled against it nightly, and `enforce-standards` deletes any
+> off-manifest label within seconds of creation. Creating one here would be undone
+> automatically, and this block is why the old taxonomy kept regrowing.
+>
+> Use an existing label — `area:*`, `qa:*`, `sim:*`, `agent:*`, `security`,
+> `regression`, `bugfix`, `found-in:*`. Type, priority and severity are **native
+> issue fields**, not labels.
 
 ## Severity Guide
 
