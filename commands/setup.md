@@ -208,10 +208,19 @@ for label in \
   COLOR=$(echo "$label" | cut -d: -f2)
   DESC=$(echo "$label" | cut -d: -f3-)
   gh label list --json name --jq '.[].name' 2>/dev/null | grep -q "^${NAME}$" || \
-    gh label create "$NAME" --color "$COLOR" --description "$DESC" 2>/dev/null || true
 done
 echo "Labels ready"
 ```
+
+> **Labels are managed org-wide — do not create them here.**
+> The taxonomy is [`ZySec-AI/.github/labels.yml`](https://github.com/ZySec-AI/.github/blob/develop/labels.yml).
+> Every repo is reconciled against it nightly, and `enforce-standards` deletes any
+> off-manifest label within seconds of creation. Creating one here would be undone
+> automatically, and this block is why the old taxonomy kept regrowing.
+>
+> Use an existing label — `area:*`, `qa:*`, `sim:*`, `agent:*`, `security`,
+> `regression`, `bugfix`, `found-in:*`. Type, priority and severity are **native
+> issue fields**, not labels.
 
 ---
 
