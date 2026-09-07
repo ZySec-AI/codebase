@@ -130,7 +130,7 @@ const TOOL_DEFINITIONS = [
   {
     name: "get_next_task",
     description:
-      "Get the highest-priority task you should work on next. Returns the top open issue ranked by priority labels (P0 > P1 > bugs > features), including mapped files so you know where to start coding.",
+      "Get the highest-priority task you should work on next. Returns the top open issue ranked by the native issue Priority field (P0 > P1 > P2 > P3), then Issue Type (Bug before Feature), including mapped files so you know where to start coding.",
     inputSchema: {
       type: "object" as const,
       properties: {},
@@ -223,7 +223,7 @@ const TOOL_DEFINITIONS = [
   {
     name: "update_issue",
     description:
-      "Update a GitHub issue — add/remove labels, set assignee, optionally post a status comment in the same call. Use this to advance issues through the pipeline (e.g., add 'status:in-progress' AND drop a 'starting work on X' comment so the change is visible).",
+      "Update a GitHub issue — add/remove labels, set assignee, optionally post a status comment in the same call. Use this to advance issues through the pipeline Use only labels from the org manifest (https://github.com/ZySec-AI/.github/blob/develop/labels.yml) — addLabels silently CREATES a label that does not exist, and enforce-standards will delete it seconds later. Status is a Projects v2 field, not a label.",
     inputSchema: {
       type: "object" as const,
       properties: {
