@@ -223,7 +223,7 @@ const TOOL_DEFINITIONS = [
   {
     name: "update_issue",
     description:
-      "Update a GitHub issue — add/remove labels, set assignee, optionally post a status comment in the same call. Use this to advance issues through the pipeline Use only labels from the org manifest (https://github.com/ZySec-AI/.github/blob/develop/labels.yml) — addLabels silently CREATES a label that does not exist, and enforce-standards will delete it seconds later. Status is a Projects v2 field, not a label.",
+      "Update a GitHub issue — add/remove labels, set assignee, optionally post a status comment in the same call. Use this to advance issues through the pipeline. Use only labels from the org manifest (https://github.com/ZySec-AI/.github/blob/develop/labels.yml) — addLabels silently CREATES a label that does not exist, and enforce-standards will delete it seconds later. Status is a Projects v2 field, not a label.",
     inputSchema: {
       type: "object" as const,
       properties: {
