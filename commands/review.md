@@ -58,9 +58,15 @@ Read `docs/PRODUCT.md` if present — product context informs security review (r
 
 ### Ensure `review` label exists
 
-```bash
-gh label create "review" --color "6f42c1" --description "From a /review audit" 2>/dev/null || true
-```
+> **Labels are managed org-wide — do not create them here.**
+> The taxonomy is [`ZySec-AI/.github/labels.yml`](https://github.com/ZySec-AI/.github/blob/develop/labels.yml).
+> Every repo is reconciled against it nightly, and `enforce-standards` deletes any
+> off-manifest label within seconds of creation. Creating one here would be undone
+> automatically, and this block is why the old taxonomy kept regrowing.
+>
+> Use an existing label — `area:*`, `qa:*`, `sim:*`, `agent:*`, `security`,
+> `regression`, `bugfix`, `found-in:*`. Type, priority and severity are **native
+> issue fields**, not labels.
 
 ---
 
