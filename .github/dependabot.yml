@@ -16,7 +16,7 @@ updates:
       # Skip major version bumps — review manually
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
-    labels: []
+    labels: ["dependencies"]
 
   # Keep GitHub Actions up to date
   - package-ecosystem: "github-actions"
@@ -28,4 +28,4 @@ updates:
       actions:
         patterns:
           - "*"
-    labels: []
+    labels: ["dependencies"]
